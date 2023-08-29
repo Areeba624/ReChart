@@ -1,16 +1,17 @@
 import React from "react";
 import Chart from "./TimeSeries";
-// import TimeGraph from "./NewTime";
-
-// import ReactDOM from 'react-dom';
-// import BeeHiveChart from './BeeHiveChart';
+import PopulationPyramid from "./PyramidGraph";
+import { StackedGraph } from "./StackedGraph";
+import Scatter from "./ScatterGraph";
 
 const App = () => {
   return (
     <div>
-      {/* <h1>Unemployment Rate</h1> */}
       <Chart />
-      {/* <TimeGraph /> */}
+      <h1>Population Pyramid</h1>
+      <PopulationPyramid />
+      <StackedGraph />
+      <Scatter></Scatter>
     </div>
   );
 };
