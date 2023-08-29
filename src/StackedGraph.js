@@ -20,75 +20,62 @@ const renderCustomizedLabel = (props) => {
 export class StackedGraph extends React.Component {
   render() {
     const data = [
-      { name: "NE Send", completed: 230, failed: 335, inprogress: 453 },
-      { name: "NE Resend", completed: 335, failed: 330, inprogress: 345 },
-      {
-        name: "Miles Orchestrator",
-        completed: 537,
-        failed: 243,
-        inprogress: 2110,
-      },
-      {
-        name: "Commissions Payment Orch",
-        completed: 132,
-        failed: 328,
-        inprogress: 540,
-      },
-      {
-        name: "Business Integrators",
-        completed: 530,
-        failed: 145,
-        inprogress: 335,
-      },
-      { name: "SmartTrack", completed: 538, failed: 312, inprogress: 110 },
+      { map: "Education/Health Service", Women: 68.6, Men: 31.4 },
+      { map: "Leisure/Hospitality", Women: 51.9, Men: 48.1 },
+      { map: "Other Service", Women: 50.7, Men: 49.4 },
+      { map: "Finanical Activities", Women: 50.1, Men: 49.9 },
+      { map: "Retail Trade", Women: 47.4, Men: 52.6 },
+      { map: "Govermnent", Women: 39.8, Men: 60.29 },
+      { map: "Information", Women: 39.0, Men: 61.0 },
+      { map: "Professional / Business Service", Women: 38.0, Men: 62.0 },
+      { map: "Whole Tarde", Women: 29.0, Men: 71.0 },
+      { map: "Manufacturing", Women: 28.0, Men: 71.7 },
+      { map: "transportation, Warehouse , Utilities", Women: 25.8, Men: 74.7 },
+      { map: "Natural Resources", Women: 18.8, Men: 81.2 },
+      { map: "Construction", Women: 9.2, Men: 90.8 },
     ];
 
     return (
-      <Card >
+      <Card>
         <CardContent>
           <div className="content c-white">
             <h1>Stacked Graph</h1>
             <ResponsiveContainer height={250} width={700}>
               <BarChart
-                width={800}
-                height={400}
                 layout="vertical"
+                width={800}
+                height={900}
                 data={data}
+                barGap="25%"
                 margin={{ left: 50, right: 50 }}
                 stackOffset="expand"
               >
                 <XAxis hide type="number" />
                 <YAxis
                   type="category"
-                  dataKey="name"
+                  dataKey="map"
                   stroke="#FFFFFF"
                   fontSize="12"
                 />
                 <Tooltip />
-                <Bar dataKey="failed" fill="#dd7876" stackId="a">
+                <Bar dataKey="Men" fill="#C70039" stackId="a">
                   <LabelList
-                    dataKey="failed"
+                    dataKey="Men"
                     position="center"
                     content={renderCustomizedLabel}
+                    unit="%"
                   />
                 </Bar>
-                <Bar dataKey="completed" fill="#82ba7f" stackId="a">
+                <Bar dataKey="Women" fill="#808080" stackId="a">
                   <LabelList
-                    dataKey="completed"
+                    dataKey="Women"
                     position="center"
                     content={renderCustomizedLabel}
-                  />
-                </Bar>
-                <Bar dataKey="inprogress" fill="#76a8dd" stackId="a">
-                  <LabelList
-                    dataKey="inprogress"
-                    position="center"
-                    content={renderCustomizedLabel}
+                    unit="%"
                   />
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
-
           </div>
         </CardContent>
       </Card>
