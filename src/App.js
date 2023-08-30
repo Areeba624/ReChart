@@ -3,7 +3,6 @@ import Chart from "./TimeSeries";
 import PopulationPyramid from "./PyramidGraph";
 import { StackedGraph } from "./StackedGraph";
 import Scatter from "./ScatterGraph";
-import VerticleBar from "./VerticleBarChart";
 
 const App = () => {
   return (
@@ -13,7 +12,7 @@ const App = () => {
       <PopulationPyramid />
       <StackedGraph />
       <Scatter></Scatter>
-      <VerticleBar/>
+
     </div>
   );
 };
