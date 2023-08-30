@@ -14,16 +14,16 @@ import {
 import { Card, CardContent, Typography } from "@mui/material";
 
 const data = [
-  { x: 30, y: 150, z: "Finanical" },
-  { x: 120, y: 290, z: "Information" },
-  { x: 170, y: 350, z: "trade/Trans/UT" },
-  { x: 140, y: 450, z: "Government" },
-  { x: 150, y: 580, z: "Manufacturing" },
-  { x: 110, y: 380, z: "Prof/Bus" },
-  { x: 110, y: 190, z: "Construstion" },
-  { x: 110, y: 480, z: "Ed/Health" },
-  { x: 210, y: 580, z: "Other" },
-  { x: 110, y: 700, z: "Res/Mining" },
+  { x: 0.0, y: 10, z: "Finanical" },
+  { x: 0.2, y: 20, z: "Information" },
+  { x: 0.4, y: 30, z: "trade/Trans/UT" },
+  { x: 0.5, y: 40, z: "Government" },
+  { x: 0.6, y: 50, z: "Manufacturing" },
+  { x: 0.8, y: -10, z: "Prof/Bus" },
+  { x: 0.10, y: -20, z: "Construstion" },
+  { x: 1.2, y: -30, z: "Ed/Health" },
+  { x: 1.4, y: -40, z: "Other" },
+  { x: 1.6, y: -50, z: "Res/Mining" },
 ];
 
 const VerticalData = [
@@ -123,8 +123,8 @@ class Plot extends React.Component {
               >
                 <CartesianGrid strokeDasharray="3 3" />
 
-                <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-                <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+                <XAxis type="number" dataKey="x" name="" unit="%" />
+                <YAxis type="number" dataKey="y" name="weight" unit="" />
                 <Tooltip cursor={{ strokeDasharray: "3 3" }} />
                 <Scatter name="A school" data={data} fill="#FF7F50">
                   <LabelList dataKey="z" fill="#900C3F" />

@@ -94,7 +94,7 @@ class Chart extends React.Component {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="record" barSize={20} fill="#999999" />
+            <Bar dataKey="record"  fill="#999999" />
             <Line type="monotone" dataKey="value" stroke="#000000" />
           </ComposedChart>
           <br></br>
