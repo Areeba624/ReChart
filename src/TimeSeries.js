@@ -13,8 +13,6 @@ import {
   Brush,
   ComposedChart,
 } from "recharts";
-import PopulationChart from "./components/PopulationChart";
-import Type3Chart from "./components/Type3Chart";
 const type1 = [
   { year: "2019", value: 590, record: 600 },
   { year: "2020", value: 868, record: 967 },
@@ -106,7 +104,18 @@ class Chart extends React.Component {
           <Typography variant="h5" gutterBottom>
             Type 2 : Unemployment Rate
           </Typography>
-          <PopulationChart/>
+          <LineChart width={900} height={300} data={type2}>
+            <XAxis dataKey="Name" />
+            <YAxis />
+
+            {/* StrokeDasharray prop "is used to create dashed grid lines". */}
+            <CartesianGrid strokeDasharray="3 3" />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="pv" barSize={20} fill="#413ea0" />
+            <Line type="monotone" dataKey="value" stroke="#00FFFF" />
+            <Line type="monotone" dataKey="record" stroke="#FF00FF" />
+          </LineChart>
           <br></br>
 
           {/*  Type 3 : Time Series Graph*/}
@@ -114,7 +123,22 @@ class Chart extends React.Component {
           <Typography variant="h4" gutterBottom>
             Type 3 : Change in NonFarm Employment: 2012-2021
           </Typography>
-          <Type3Chart/>
+          <BarChart
+            width={600}
+            height={300}
+            barSize={50}
+            barCategoryGap={2}
+            data={Type3}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="Year" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="CityLake" fill="#C70039" unit="%" />
+            <Bar dataKey="US" fill="#808080" />
+          </BarChart>
 
           {/* Type 4 Start from here */}
 
