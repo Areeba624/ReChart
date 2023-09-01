@@ -50,6 +50,7 @@ class Chart extends React.Component {
           <Typography variant="h5" gutterBottom>
             Type 1 : Population Rate
           </Typography>
+          <h1>3.0%</h1>
           <ComposedChart
             width={500}
             height={300}
@@ -66,7 +67,7 @@ class Chart extends React.Component {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="record" barSize={20} fill="#999999" />
+            <Bar dataKey="record"  fill="#999999" />
             <Line type="monotone" dataKey="value" stroke="#000000" />
           </ComposedChart>
           <br></br>
@@ -76,7 +77,18 @@ class Chart extends React.Component {
           <Typography variant="h5" gutterBottom>
             Type 2 : Unemployment Rate
           </Typography>
-          <PopulationChart/>
+          <LineChart width={900} height={300} data={type2}>
+            <XAxis dataKey="Name" />
+            <YAxis />
+
+            {/* StrokeDasharray prop "is used to create dashed grid lines". */}
+            <CartesianGrid strokeDasharray="3 3" />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="pv" barSize={20} fill="#413ea0" />
+            <Line type="monotone" dataKey="value" stroke="#00FFFF" />
+            <Line type="monotone" dataKey="record" stroke="#FF00FF" />
+          </LineChart>
           <br></br>
 
           {/*  Type 3 : Time Series Graph*/}

@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
   Tooltip,
   Label,
-  LabelList,
+  LabelList,CartesianGrid
 } from "recharts";
 import { Card, CardContent } from "@mui/material";
 
@@ -34,12 +34,26 @@ export class StackedGraph extends React.Component {
       { map: "Natural Resources", Women: 18.8, Men: 81.2 },
       { map: "Construction", Women: 9.2, Men: 90.8 },
     ];
+    const data2 = [
+      {
+        value1: 200,
+        value2: 300,
+      },
+      {
+        value1: 120,
+        value2: 250,
+      },
+      {
+        value1: 100,
+        value2: 200,
+      },
+    ];
 
     return (
       <Card>
         <CardContent>
           <div className="content c-white">
-            <h1>Stacked Graph</h1>
+            <h2>Share of Industry Employment By Sex, 2017-2022</h2>
             <ResponsiveContainer height={250} width={700}>
               <BarChart
                 layout="vertical"
@@ -50,7 +64,7 @@ export class StackedGraph extends React.Component {
                 margin={{ left: 50, right: 50 }}
                 stackOffset="expand"
               >
-                <XAxis hide type="number" />
+                <XAxis  type="number" />
                 <YAxis
                   type="category"
                   dataKey="map"
@@ -74,6 +88,39 @@ export class StackedGraph extends React.Component {
                     unit="%"
                   />
                 </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+
+
+            {/* type 2 */}
+
+
+            <h1>Diversity in Management & Jobs</h1>
+            <ResponsiveContainer height={250} width={700}>
+              <BarChart data={data2} layout="vertical">
+                <CartesianGrid
+                  vertical={true}
+                  horizontal={false}
+                  stroke="#D2E7FB"
+                  fillOpacity={0}
+                />
+                <XAxis type="number" />
+                <YAxis width={80} type="category" dataKey="type" offset={10} />
+
+                <Tooltip />
+
+                <Bar
+                  radius={[0, 0, 0, 0]}
+                  dataKey="value1"
+                  fill="#5DADE2"
+                  stackId="a"
+                />
+                <Bar
+                  stackId="a"
+                  radius={[0,0,0,0]}
+                  dataKey="value2"
+                  fill="#154360"
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>
