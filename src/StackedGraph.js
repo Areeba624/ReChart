@@ -53,7 +53,7 @@ export class StackedGraph extends React.Component {
       <Card>
         <CardContent>
           <div className="content c-white">
-            <h1>Stacked Graph</h1>
+            <h2>Share of Industry Employment By Sex, 2017-2022</h2>
             <ResponsiveContainer height={250} width={700}>
               <BarChart
                 layout="vertical"
@@ -64,7 +64,7 @@ export class StackedGraph extends React.Component {
                 margin={{ left: 50, right: 50 }}
                 stackOffset="expand"
               >
-                <XAxis hide type="number" />
+                <XAxis  type="number" />
                 <YAxis
                   type="category"
                   dataKey="map"
@@ -90,7 +90,11 @@ export class StackedGraph extends React.Component {
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
+
+
             {/* type 2 */}
+
+
             <h1>Diversity in Management & Jobs</h1>
             <ResponsiveContainer height={250} width={700}>
               <BarChart data={data2} layout="vertical">
