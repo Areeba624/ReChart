@@ -78,6 +78,7 @@ class Chart extends React.Component {
           <Typography variant="h5" gutterBottom>
             Type 1 : Population Rate
           </Typography>
+          <h1>3.0%</h1>
           <ComposedChart
             width={500}
             height={300}

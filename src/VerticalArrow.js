@@ -23,7 +23,7 @@ const Vertical = () => {
         viewBox="0 0 100 100"
       >
         <line x1="0" y1="0" x2="100" y2="100" stroke="blue" strokeWidth="2" />
-        <polygon points="10,50 10,-20 10,90" fill="blue" />
+        {/* <polygon points="10,50 10,-20 10,90" fill="blue" /> */}
         <polygon points="100,100 90,60 70,102" fill="blue" />
       </svg>
     </div>
